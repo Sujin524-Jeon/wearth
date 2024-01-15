@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+/*게시판 타이틀 구역*/
+.title{
+	border: 1px solid grey;
+	margin-left: 2%;
+	margin-bottom: 1.6rem;
+	padding: 1.6rem;
+	}
+.mainTitle{
+	color: #58b483;
+}
+
+.insertForm{
+	margin-left: 2%;
+}
+/*.hashtag {
+  display: inline-block;
+  background-color: lightgray;
+  padding: 2px 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+}*/
+.insertWhat{
+	font-weight: bold;
+}
+.insertTitle {
+	margin-bottom: 1rem;
+	width: 100%;
+}
+.insertContent {
+	width: 100%;
+}
+.insertHashtag {
+	width: 100%;
+	margin-bottom: 1rem;
+}
+.btn_group{
+	margin-top: 4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}	

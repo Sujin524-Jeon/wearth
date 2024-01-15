@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/*모달 내부CSS*/
+/* 오버레이 스타일 */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 모달 배경색을 어둡게 설정 */
+  z-index: 9999;
+}
+
+/* 모달 그리드 스타일 */
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 왼쪽/오른쪽 화면을 동일한 너비로 설정합니다. */
+  gap: 20px; /* 화면 사이의 간격을 조정합니다. */
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff; /* 모달 내용의 배경색을 설정합니다. */
+  padding: 20px; /* 모달 내용의 여백을 설정합니다. */
+  /*height: 80%;*/
+  max-width: 80%; /* 모달의 최대 너비 제한. */
+  border-radius: 10px;
+}
+
+/* 이미지를 감싸는 왼쪽 화면 스타일 */
+.modal-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* 이미지 스타일 */
+.modal-left img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* 내용이 들어가는 오른쪽 화면 스타일 */
+.modal-right {
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  	color: #000;
+}
+
+/* 댓글 작성자와 댓글 내용을 같은 줄에 가로로 표시 */
+.commentArea {
+	height: 40%;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.commentWriter {
+	display: flex;
+  font-weight: bold;
+}
+
+.commentContent {
+	display: flex;
+  margin-left: 10px;
+}
+
+/* 댓글 입력 필드 스타일 */
+#addComment {
+	width: 80%;
+  flex: 1; /* 이 부분을 추가하여 입력 필드가 남은 공간을 모두 차지하도록 설정합니다. */
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* 게시 버튼 스타일 */
+#btn_addComment {
+  margin-left: 8px; /* 버튼과 입력 필드 사이의 간격을 설정합니다. */
+  padding: 8px 10px;
+  font-size: 16px;
+  background-color: #43a06f;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 4px;
+}
+/* 모달 닫기 버튼 스타일 */
+.modal-close-btn {
+  position: absolute;
+  top: -4px;
+  right: 10px;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+}
