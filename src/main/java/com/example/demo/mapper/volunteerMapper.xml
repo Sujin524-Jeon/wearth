@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="volunteer">
+
+  <select id="findAll" resultType="volunteerVO">
+		select volunteerno, v_title, v_content, v_date, v_start, v_end, v_loc, v_addr, v_time, v_personnel, v_agency, v_manager, v_phone, v_recruitDate, v_email 
+		from (select rownum n, volunteerno, v_title, v_content, v_date, v_start, v_end, v_loc, v_addr, v_time, v_personnel, v_agency, v_manager, v_phone, v_recruitDate, v_email 
+		from (select rownum n, volunteerno, v_title, v_content, v_date, v_start, v_end, v_loc, v_addr, v_time, v_personnel, v_agency, v_manager, v_phone, v_recruitDate, v_email
+		from volunteer 
+		order by volunteerno desc)) a
+		where a.n between #{start} and #{end}
+  </select>
+ 
+ 	<select id="getTotalRecord" resultType="java.lang.Integer">
+ 		select count(*) from volunteer
+ 	</select>
+ 	
+ 	<select id="findByVolunteerNo" resultType="volunteerVO">
+ 		select * from volunteer where volunteerNo=#{volunteerNo}
+ 	</select>
+ 	
+</mapper>

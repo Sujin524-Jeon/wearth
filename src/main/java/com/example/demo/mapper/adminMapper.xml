@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin">
+
+    <!-- 회원 테이블 조회 -->
+
+    <!-- 유저리스트 -->
+    <select id = "getTotalUserList" resultType="usersVO">
+        SELECT *
+        FROM (
+        SELECT ROWNUM as row_num, u.*
+        FROM (SELECT * FROM users WHERE userno IS NOT NULL
+        ORDER BY userno) u
+        )
+        WHERE row_num BETWEEN #{start} AND #{end}
+
+    </select>
+
+    <!-- 회원삭제 -->
+    <delete id = "deleteUser">
+        delete from users where userno = #{userno}
+    </delete>
+
+    <!-- 총 회원수 -->
+    <select id = "getTotalUser" resultType = "java.lang.Integer">
+        select count(*) from users
+    </select>
+
+
+</mapper>

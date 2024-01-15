@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="review">
+  <insert id="insertReview" parameterType="opinionVO">
+	insert into opinion(opinionno, goodsno, eduno, lecno, id, opinionname, opinioncontent, opiniondate, type) 
+	values
+	(seq_opinion.nextval,#{goodsNo},#{eduNo},#{lecNo},#{ID},#{opinionName},#{opinionContent},sysdate, 'review')
+  </insert>
+ 	<!-- 댓글(강연후기) -->
+ 	<select id="findAllEducationReview" resultType="map">
+ 		select * from opinion where type='review' and eduNO = #{eduNO} and eduNO is not null
+ 	</select>
+ 	<select id="findAllLectureReview" resultType="map"> 
+ 		select * from opinion where type='review' and lecNO = #{lecNO} and lecNO is not null
+ 	</select>
+ 	<insert id="insertEducationReview" parameterType="opinionVO">
+ 		insert into opinion (opinionno, eduNO, goodsno, lecNO, id, opinionname, opinioncontent, opiniondate, opinionSecret, opinionPwd, opinionStatus, REVIEWSCORE  , answerNo, type)
+ 		values (seq_opinion.nextval,#{eduNO},#{goodsNo, jdbcType=INTEGER},#{lecNO, jdbcType=INTEGER},#{ID},#{opinionName, jdbcType=VARCHAR},#{opinionContent}, sysdate, #{opinionSecret, jdbcType=INTEGER},#{opinionPwd, jdbcType=VARCHAR},#{opinionStatus, jdbcType=VARCHAR},#{reviewScore, jdbcType=INTEGER},#{answerNo, jdbcType=INTEGER},'review')
+ 	</insert>
+ 	<insert id="insertLectureReview" parameterType="opinionVO">
+ 		insert into opinion(opinionno, eduNO, goodsno, lecNO, id, opinionname, opinioncontent, opiniondate, opinionSecret, opinionPwd, opinionStatus, REVIEWSCORE , answerNo, type)
+ 		 values (seq_opinion.nextval,#{eduNO, jdbcType=INTEGER},#{goodsNo, jdbcType=INTEGER},#{lecNO}, #{ID},#{opinionName, jdbcType=VARCHAR},#{opinionContent}, sysdate ,#{opinionSecret, jdbcType=INTEGER},#{opinionPwd, jdbcType=VARCHAR},#{opinionStatus, jdbcType=VARCHAR},#{reviewScore},#{answerNo, jdbcType=INTEGER},'review')
+ 	</insert>
+
+</mapper>
