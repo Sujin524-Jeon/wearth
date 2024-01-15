@@ -1,0 +1,82 @@
+@charset "UTF-8";
+	.custom-btn{
+	border: none;
+	border-radius: 0.4rem;
+}
+	.title{
+		border: 1px solid grey;
+		margin-left: 2%;
+		margin-bottom: 1.6rem;
+		padding: 1.6rem;
+	}
+	.mainTitle{
+		color: #58b483;
+	}
+	
+	/*봉사*/
+	.top{
+		margin: 4rem 0 2rem 0;
+		display: flex;
+		justify-content: space-between;
+	}
+	.upperContent{
+		display: flex;
+		
+	}
+	.informationUpper{
+		display: flex;
+	}
+	.informMapPart{
+		padding-left: 1rem;
+	}
+	
+	.informationLower{
+		display: flex;
+	}
+	.volunteerTitle{
+		font-size: 28px;
+		font-weight: bold;
+		color:  #58b483;
+	}
+	.information{
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+	}
+	.detail{
+		display: flex;
+	}
+	
+	#openMap{
+		cursor: pointer;
+	}
+	.category{
+		margin-right: 1rem;
+		margin-left: 1rem;
+		font-size: 20px;
+		font-weight: bold;
+		color:  #58b483;
+	}
+	.categoryContent{
+		font-size: 20px;
+		font-weight: bold;
+		
+	}
+	.btn_bottom{
+		display: flex;
+		justify-content: space-between;
+	}
+	.btn_bottom_left{
+		display: flex;
+	}
+	#btn_previous{
+		margin-right: 1rem;
+	}
+	
+	.btn_bottom_right{
+		display: flex;
+	}
+	.separate{
+		border-top: 2px solid lightgray;
+		margin: 2rem 0px;
+	}

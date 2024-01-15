@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/* 게시판 타이틀 구역*/
+.title{
+	border: 1px solid grey;
+	margin-left: 2%;
+	margin-bottom: 1.6rem;
+	padding: 1.6rem;
+}
+.mainTitle{
+	color: #58b483;
+}
+
+.custom-btn{
+	border: none;
+	border-radius: 0.4rem;
+}
+.search-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.option {
+	gap: 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.option label {
+  margin-right: 4px;
+  
+}
+
+.option input[type="date"],
+.option input[type="text"] {
+	margin-right: 2px;
+}
+.location-option {
+  display: flex;
+  align-items: center;
+}
+.option select{
+	height:32px;
+}
+.location-option select {
+	margin-left: 2px;
+  margin-right: 2px;
+  height: 32px;
+}	
+
+/*봉사글 리스트*/
+table {
+	text-align: center;
+}
+tr:hover{
+	cursor: pointer;
+}
+
+
